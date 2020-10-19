@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block container %}
+    <div class="container pt-4 ">
+
+
+        <div class="text-aling-center">
+            <h2>Seleccionar el tipo de paquete</h2  >
+         </div>
+
+
+            <div>
+                <div class=" card ">
+                    <table class="table ">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col" >Tipo de paquete</th>
+                                <th scope="col">Precio</th>
+                                <th scope="col">Acción</th>
+                            </tr>
+                        </thead>
+                            {% for i,j in paq.items() %}
+                                <tbody>
+                                    <tr>
+                                        <td>{{i}}</td>
+                                        <td>{{j}}</td>
+                                        <td>
+                                            <form action="{{ url_for('paqueteRespuesta', type= i ) }}" method = 'GET'>
+                                                <input class="btn" type="Submit" value="Seleccionar">
+                                            </form>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            {% endfor %}
+                    </table>  
+                </div>
+            </div>           
+       
+    </div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block container %}
+<div class="container pt-4 ">
+    <div>
+        <h2 >Seleccionar el destino del paquete</h2  >
+    </div>
+    <div>
+        <div class="card">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Origen</th>
+                        <th scope="col">Destino</th>
+                        <th scope="col">Precio del envio</th>
+                        <th scope="col">Precio extra por tipo de paquete</th>
+                        <th scope="col">Acción</th>
+                    </tr>
+                </thead>
+                    {% for i,j in trayectoria.items() %}
+                        <tbody>
+                            <tr>
+                                <td>Local</td>
+                                <td>{{i}}</td>
+                                <td>{{j}}</td>
+                                <td>{{price}}</td>
+                                <td>
+                                    <form action="{{ url_for('factura', des = i ) }}" method = 'GET'>
+                                        <input class="btn"type="Submit" value="Seleccionar">
+                                    </form>
+                                </td>
+                            </tr>
+                        </tbody>
+                    {% endfor %}
+            </table>  
+        </div>
+    </div>
+</div>
+{% endblock %}

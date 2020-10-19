@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block container %}
+    <div class="container">
+        <div class="mt-5" >
+            <div class="d-flex justify-content-center">
+                <div class="p-3 border border-dark rounded ">
+                    <p>Nombre del remitente: {{factura.name}}</p>
+                    <p>Lugar de destino: {{factura.destination}}</p>
+                    <p>Número de identificación del remitente: {{factura.identification}} </p>
+                    <p>Tipo de paquete enviado: {{factura.paquete}}</p>
+                    <p>Precio total pagado: {{factura.price}}</p>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center mt-5">
+                <a href="{{ url_for('inicioApp') }} " class="btn btn-secondary">Atras</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

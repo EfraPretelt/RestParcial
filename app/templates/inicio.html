@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+
+{% block container %}
+<div class="container">
+    <div class="row justify-content-md-center mt-5">
+        <div>
+            <div class="text-center">
+                <h2>Pagina de inicio</h2>
+                <h3> Para poder enviar algo debe primero registrese o inicie sesión</h3>
+            </div>
+            <div class="mt-5 d-flex justify-content-around">
+                <div>
+                    <a href="{{ url_for('Show_Signup_Form') }}" class="btn btn-secondary">Registrarte</a>
+                </div>
+                <div>
+                    <a href="{{ url_for('Show_login_Form') }}"  class="btn btn-secondary" >Iniciar sesión</a>
+                </div>
+            </div>
+        </div>
+
+    </div>        
+
+</div>
+{% endblock %} 

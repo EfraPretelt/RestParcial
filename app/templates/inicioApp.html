@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block container %}
+
+<div class="mt-5" >
+    <div class="d-flex justify-content-around">
+        <div>
+            <a href="{{ url_for('paquete') }}" class="btn">
+                <div class="p-3 border border-dark rounded ">
+                    <h4 class="text-secondary">Realizar un pedido</h4>
+                </div>
+            </a>
+        </div>
+        <div>
+            <a href="{{ url_for('buscar' ) }}" class="btn">
+                <div class="p-3 border border-dark rounded">
+                    <h4 class="text-secondary">Buscar pedido</h4>
+                </div>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+{% endblock %}

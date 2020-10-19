@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+
+{% block container %}
+
+<div class="container ">
+    
+    <div class="row justify-content-md-center mt-5">
+        <div class="col-md-4">
+            <form action="" method="post" novalidate>
+                {{ form.hidden_tag() }}
+                <div class= "p-3 border border-dark rounded ">
+                    <div class="row justify-content-md-center mb-3">
+                        <h4>Inicia de sesión </h4>
+                    </div>    
+
+                    <div class="form-group">
+                        <b>{{ form.nombre.label }}</b>
+                        {{ form.nombre }}
+                        <br>
+                        {% for error in form.nombre.errors %}
+                        <span style="color: red;">{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    <div class="form-group">
+                        <b>{{ form.contraseña.label }}</b>
+                        {{ form.contraseña }}
+                        <br>
+                        {% for error in form.contraseña.errors %}
+                        <span style="color: red;">{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <a href="{{ url_for('Show_Signup_Form')}}" class="btn"> Registrarse </a>    
+                        </div>
+                        <div>
+                            <input class="btn btn-secondary" type="submit" value="Iniciar sesión">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
